@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        /* Tambahkan beberapa styling untuk form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hsl(207, 63%, 44%); 
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            max-width: 400px;
+            background-color: white;
+            padding: 20px;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .form-group-inline {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Selamat Datang</h1>
+        <form method="post" action="Tugas4.html">
+            <div class="form-group">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" required>
+            </div>
+            <div class="form-group">
+                <label for="nim">Nim:</label>
+                <input type="text" id="nim" name="nim" required>
+            </div>
+            <div class="form-group">
+                <label for="tempatLahir">Tempat Lahir:</label>
+                <input type="text" id="tempatLahir" name="tempat_lahir" required>
+            </div>
+            <div class="form-group">
+                <label for="tanggalLahir">Tanggal Lahir:</label>
+                <input type="date" id="tanggalLahir" name="tanggal_lahir" required>
+            </div>
+            <div class="form-group">
+                <label for="prodi">Program Studi:</label>
+                <select id="prodi" name="prodi" required>
+                    <option value="PGSD">Pendidikan Guru Sekolah Dasar</option>
+                    <option value="PGPAUD">Pendidikan Guru Anak Usia Dini</option>
+                    <option value="PKP">Pendidikan Perikanan Dan Kelautan</option>
+                    <option value="SIK">Sistem Informasi Kelautan</option>
+                    <option value="LK">Logistik Kelautan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Jenis Kelamin:</label>
+                <div class="form-group-inline">
+                    <label for="jkLaki">
+                        <input type="radio" id="jkLaki" name="jk" value="Laki-Laki" required> Laki-Laki
+                    </label>
+                    <label for="jkPerempuan">
+                        <input type="radio" id="jkPerempuan" name="jk" value="Perempuan" required> Perempuan
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Hobby:</label>
+                <div class="form-group-inline">
+                    <label for="hobiGym">
+                        <input type="checkbox" id="hobiGym" name="hobi" value="GYM"> Gym
+                    </label>
+                    <label for="hobiBasket">
+                        <input type="checkbox" id="hobiBasket" name="hobi" value="Basket"> Basket
+                    </label>
+                    <label for="hobiRenang">
+                        <input type="checkbox" id="hobiRenang" name="hobi" value="Renang"> Renang
+                    </label>
+                </div>
+            </div>
+            <input type="submit" name="submit" value="LOGIN">
+        </form>
+    </div>
+</body>
+</html>
