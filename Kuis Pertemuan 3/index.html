@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Mahasiswa  Event</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            justify-content: center;
+        
+            justify-content: center;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #fd0303;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #b2d9f7;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .italic {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    
+    <center>
+    <h1>Tabel Mahasiswa dengan Event</h1>
+<div class="a1"> 
+    <table id="tabel-mahasiswa">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Tanggal Lahir</th>
+                <th>Kelas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-detail="Nama: Gavin Sangraha Rahmat" class="nama">Gavin Sangraha Rahmat</td>
+                <td data-nim="2309878" class="nim">2309878</td>
+                <td data-tanggal="2005-10-05" class="tanggal">2005-10-05</td>
+                <td class="kelas">3/A</td>
+            </tr>
+            <tr>
+                <td data-detail="Nama: Sattar Putra Hervia" class="nama">Sattar Putra Hervia</td>
+                <td data-nim="2309000" class="nim">2309000</td>
+                <td data-tanggal="2005-01-15" class="tanggal">2005-01-15</td>
+                <td class="kelas">3/A</td>
+            </tr>
+            <tr>
+                <td data-detail="Nama: Fadli Kurnia Ramadhan" class="nama">Fadli Kurnia Ramadhan</td>
+                <td data-nim="2303400" class="nim">2303400</td>
+                <td data-tanggal="2005-12-22" class="tanggal">2005-12-22</td>
+                <td class="kelas">3/A</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</center>
+
+    <script>
+        // Ambil semua elemen yang diperlukan
+        const namaCells = document.querySelectorAll('.nama');
+        const nimCells = document.querySelectorAll('.nim');
+        const tanggalCells = document.querySelectorAll('.tanggal');
+        const kelasCells = document.querySelectorAll('.kelas');
+
+        // Event 1: Hover pada nama (Menambahkan teks tebal)
+        namaCells.forEach(cell => {
+            cell.addEventListener('mouseover', function() {
+                this.classList.add('bold'); // Tambah kelas bold saat hover
+            });
+            cell.addEventListener('mouseout', function() {
+                this.classList.remove('bold'); // Hapus kelas bold setelah hover
+            });
+        });
+
+        // Event 2: Klik pada NIM (Toggle teks italic)
+        nimCells.forEach(cell => {
+            cell.addEventListener('click', function() {
+                this.classList.toggle('italic'); // Toggle kelas italic saat diklik
+            });
+        });
+
+        // Event 3: Klik dua kali pada tanggal lahir (Mengubah warna teks)
+        tanggalCells.forEach(cell => {
+            cell.addEventListener('dblclick', function() {
+                this.style.color = this.style.color === 'green' ? '' : 'green'; // Toggle warna merah
+            });
+        });
+
+        // Event 4: Klik kanan pada nama (Alert detail nama)
+        namaCells.forEach(cell => {
+            cell.addEventListener('contextmenu', function(event) {
+                event.preventDefault(); // Mencegah menu klik kanan default
+                alert(this.getAttribute('data-detail')); // Tampilkan detail nama
+            });
+        });
+
+        // Event 5: Hover pada Kelas (Ubah warna background kelas saat hover)
+        kelasCells.forEach(cell => {
+            cell.addEventListener('mouseover', function() {
+                this.style.backgroundColor = '#d9f7b2'; // Ubah background saat hover
+            });
+            cell.addEventListener('mouseout', function() {
+                this.style.backgroundColor = 'grey'; // Kembalikan background setelah hover
+            });
+        });
+    </script>
+
+</body>
+</html>
